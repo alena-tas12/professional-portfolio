@@ -28,30 +28,19 @@ const projects = [
   }
 ];
 
-const intellectualIdentity = [
-  {
-    title: 'Architecture before implementation',
-    description: 'I define system boundaries, state, responsibilities, interactions, and interfaces before choosing implementation details. I ask "What should the system actually be?" before "What framework should I use?"'
-  },
-  {
-    title: 'Systems over features',
-    description: 'I am interested in how components interact as a system rather than treating each feature as an isolated object. Environment → State → Observation → Reasoning → Action → Feedback.'
-  },
-  {
-    title: 'Evidence before inference',
-    description: 'Systems should distinguish observed state from assumptions and hypotheses. Do not invent state just because a model can generate a plausible answer.'
-  },
-  {
-    title: 'Human agency & Continuity',
-    description: 'AI should function as an engineering component or augmentation layer, not automatically replace human judgment. For intelligent systems, context and state across time matter as much as individual interactions.'
-  }
-];
+const skills = {
+  languages: ['Python', 'JavaScript', 'TypeScript', 'C++'],
+  systems: ['React', 'Node.js', 'Electron', 'Docker', 'Vite'],
+  networking: ['Cisco', 'VLANs', 'DHCP', 'DNS', 'NAT', 'Firewalls', 'Routing'],
+  hardware: ['Arduino', 'ESP8266', '8051', 'ARM7', 'Sensors']
+};
 
 function App() {
   return (
     <div className="app-container">
       <header className="hero-section">
         <div className="hero-content">
+          <img src="https://ui-avatars.com/api/?name=Alen+Barnes&background=0D8ABC&color=fff&size=150" alt="Alen Barnes" style={{borderRadius: '50%', marginBottom: '2rem'}} />
           <h1 className="title" style={{textTransform: 'uppercase', letterSpacing: '2px'}}>Alen Barnes</h1>
           <p className="subtitle" style={{color: '#06b6d4', fontWeight: 'bold'}}>Computational Systems Builder</p>
           <p style={{fontSize: '1.2rem', color: '#94a3b8', margin: '1rem 0 2rem 0'}}>
@@ -62,10 +51,13 @@ function App() {
           </p>
           <div className="nav-links">
             <a href="https://github.com/alena-tas12" target="_blank" rel="noreferrer" className="btn btn-primary">
-              View GitHub
+              GitHub
             </a>
-            <a href="#projects" className="btn btn-secondary">
-              See Systems
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="btn btn-secondary">
+              LinkedIn
+            </a>
+            <a href="#resume" className="btn btn-primary">
+              Resume
             </a>
           </div>
         </div>
@@ -73,15 +65,22 @@ function App() {
 
       <main className="content-section">
         
-        <div id="intellectual" style={{marginBottom: '6rem'}}>
-          <h2 className="section-title">How I Think</h2>
+        <div id="skills" style={{marginBottom: '6rem'}}>
+          <h2 className="section-title">Technical Domains</h2>
           <div className="grid">
-            {intellectualIdentity.map((item, idx) => (
-              <div className="card" key={idx}>
-                <h3 className="card-title">{item.title}</h3>
-                <p className="card-desc">{item.description}</p>
-              </div>
-            ))}
+            <div className="card">
+              <h3 className="card-title">Languages & Frameworks</h3>
+              <p className="card-desc">{skills.languages.join(', ')}</p>
+              <p className="card-desc">{skills.systems.join(', ')}</p>
+            </div>
+            <div className="card">
+              <h3 className="card-title">Networking & Infra</h3>
+              <p className="card-desc">{skills.networking.join(', ')}</p>
+            </div>
+            <div className="card">
+              <h3 className="card-title">Embedded & IoT</h3>
+              <p className="card-desc">{skills.hardware.join(', ')}</p>
+            </div>
           </div>
         </div>
 
@@ -104,10 +103,32 @@ function App() {
             </div>
           ))}
         </div>
+
+        <div id="resume" style={{marginTop: '6rem', padding: '3rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px'}}>
+          <h2 className="section-title">Professional Record</h2>
+          <p style={{textAlign: 'center', marginBottom: '2rem'}}>
+            <a href="#" className="btn btn-primary">Download Formal Resume (PDF)</a>
+          </p>
+          <div style={{color: '#e2e8f0', fontFamily: 'monospace', whiteSpace: 'pre-wrap', lineHeight: '1.8'}}>
+            {`EDUCATION
+B.Tech in Computer Science and Engineering
+CGPA: 8.64/10.0
+
+EXPERIENCE
+Computational Systems Builder | Independent Research
+- Architected Chrono, a 15-stage cognitive pipeline world model.
+- Built Genesis, a deterministic educational-system simulator.
+- Deployed NetSage, an AI-assisted network reasoning tool.
+
+AI-Assisted Dev: ChatGPT, Codex, Claude, Cursor, Windsurf, Antigravity, Perplexity; AI-assisted architecture, implementation, and prototyping`}
+          </div>
+        </div>
       </main>
 
-      <footer>
-        &copy; {new Date().getFullYear()} Alen Barnes. Computational Systems Builder.
+      <footer id="contact" style={{textAlign: 'center', padding: '4rem', color: '#94a3b8'}}>
+        <h3>Contact</h3>
+        <p>Email: alena@example.local</p>
+        <p>&copy; {new Date().getFullYear()} Alen Barnes. Computational Systems Builder.</p>
       </footer>
     </div>
   );
