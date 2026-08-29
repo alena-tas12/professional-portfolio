@@ -1,149 +1,115 @@
 import React from 'react';
 import './App.css';
-import { intellectualIdentity, flagshipSystems, technicalDomains } from './data';
+
+const projects = [
+  {
+    title: 'Chrono',
+    description: 'Human-Centric Cognitive Environment. A local-first system designed around continuity, context, memory, state, reasoning and interaction across time.',
+    tags: ['Architecture', 'World Model', 'Cognitive Pipeline'],
+    link: '#'
+  },
+  {
+    title: 'Project Genesis',
+    description: 'Computational Educational-System Simulator. A deterministic simulation platform for modelling educational architectures and longitudinal trajectories.',
+    tags: ['Simulation', 'Knowledge Graphs', 'Research'],
+    link: 'https://github.com/alena-tas12/educational-system-simulations'
+  },
+  {
+    title: 'NetSage',
+    description: 'Network Observation & Reasoning System. Combines deterministic network state observation with AI-assisted diagnostic reasoning.',
+    tags: ['Networking', 'VLANs', 'Diagnosis'],
+    link: '#'
+  },
+  {
+    title: 'Green Dashboard',
+    description: 'Cyber-Physical IoT Energy Monitoring System. Physical sensing → telemetry → backend → analytics → human-facing dashboard.',
+    tags: ['IoT', 'Data Visualization', 'Full-stack'],
+    link: 'https://github.com/alena-tas12/GreenDashboardMicroprojectEntrepreneurship'
+  }
+];
+
+const intellectualIdentity = [
+  {
+    title: 'Architecture before implementation',
+    description: 'I define system boundaries, state, responsibilities, interactions, and interfaces before choosing implementation details. I ask "What should the system actually be?" before "What framework should I use?"'
+  },
+  {
+    title: 'Systems over features',
+    description: 'I am interested in how components interact as a system rather than treating each feature as an isolated object. Environment → State → Observation → Reasoning → Action → Feedback.'
+  },
+  {
+    title: 'Evidence before inference',
+    description: 'Systems should distinguish observed state from assumptions and hypotheses. Do not invent state just because a model can generate a plausible answer.'
+  },
+  {
+    title: 'Human agency & Continuity',
+    description: 'AI should function as an engineering component or augmentation layer, not automatically replace human judgment. For intelligent systems, context and state across time matter as much as individual interactions.'
+  }
+];
 
 function App() {
   return (
-    <>
-      <nav>
-        <div className="nav-brand">ALEN BARNES</div>
-        <div className="nav-links">
-          <a href="#map">System Map</a>
-          <a href="#intellectual">How I Think</a>
-          <a href="#systems">Flagship Systems</a>
-          <a href="#domains">Domains</a>
+    <div className="app-container">
+      <header className="hero-section">
+        <div className="hero-content">
+          <h1 className="title" style={{textTransform: 'uppercase', letterSpacing: '2px'}}>Alen Barnes</h1>
+          <p className="subtitle" style={{color: '#06b6d4', fontWeight: 'bold'}}>Computational Systems Builder</p>
+          <p style={{fontSize: '1.2rem', color: '#94a3b8', margin: '1rem 0 2rem 0'}}>
+            Architecture • AI Systems • Computational Modelling • Infrastructure
+          </p>
+          <p style={{fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto 3rem auto', lineHeight: '1.6'}}>
+            I design and build computational systems that model, observe, reason about, and interact with complex environments.
+          </p>
+          <div className="nav-links">
+            <a href="https://github.com/alena-tas12" target="_blank" rel="noreferrer" className="btn btn-primary">
+              View GitHub
+            </a>
+            <a href="#projects" className="btn btn-secondary">
+              See Systems
+            </a>
+          </div>
         </div>
-      </nav>
+      </header>
 
-      <div className="portfolio-wrapper">
-        <header className="hero">
-          <h1>ALEN BARNES</h1>
-          <h2>Computational Systems Builder</h2>
-          <div className="hero-disciplines">
-            Architecture &middot; AI Systems &middot; Computational Modelling &middot; Infrastructure
-          </div>
-          <p>I design and build computational systems that model, observe, reason about, and interact with complex environments.</p>
-        </header>
-
-        <section id="map" className="system-map-section">
-          <h3>The System Map</h3>
-          <div className="map-container">
-            <div className="node core">ALEN BARNES</div>
-            <div className="line vertical"></div>
-            <div className="node">SYSTEMS THINKING</div>
-            <div className="line vertical"></div>
-            <div className="line horizontal"></div>
-            <div className="map-row">
-              <div className="node domain">MODEL</div>
-              <div className="node domain">OBSERVE</div>
-              <div className="node domain">REASON</div>
-            </div>
-            <div className="line horizontal" style={{marginTop: '20px'}}></div>
-            <div className="line vertical"></div>
-            <div className="node core">ARCHITECT</div>
-            <div className="line vertical"></div>
-            <div className="line horizontal" style={{width: '900px'}}></div>
-            <div className="map-row" style={{width: '1000px', marginTop: '20px'}}>
-              <div className="map-col">
-                <div className="node domain">Human Systems</div>
-                <div className="line vertical" style={{height: '20px'}}></div>
-                <div className="node" style={{borderColor: 'var(--accent-blue)'}}>Chrono</div>
-              </div>
-              <div className="map-col">
-                <div className="node domain">Education Systems</div>
-                <div className="line vertical" style={{height: '20px'}}></div>
-                <div className="node" style={{borderColor: 'var(--accent-blue)'}}>Genesis</div>
-              </div>
-              <div className="map-col">
-                <div className="node domain">AI Systems</div>
-                <div className="line vertical" style={{height: '20px'}}></div>
-                <div className="node" style={{borderColor: 'var(--accent-blue)'}}>Engineering Workflow</div>
-              </div>
-              <div className="map-col">
-                <div className="node domain">Networks & Infra</div>
-                <div className="line vertical" style={{height: '20px'}}></div>
-                <div className="node" style={{borderColor: 'var(--accent-blue)'}}>NetSage</div>
-              </div>
-              <div className="map-col">
-                <div className="node domain">Physical Systems</div>
-                <div className="line vertical" style={{height: '20px'}}></div>
-                <div className="node" style={{borderColor: 'var(--accent-blue)'}}>Green Dashboard</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="intellectual" className="intellectual-identity">
-          <h3>How I Think</h3>
-          <p>Different domains. Same mind. Same engineering pattern.</p>
-          <div className="identity-grid">
+      <main className="content-section">
+        
+        <div id="intellectual" style={{marginBottom: '6rem'}}>
+          <h2 className="section-title">How I Think</h2>
+          <div className="grid">
             {intellectualIdentity.map((item, idx) => (
-              <div className="identity-card" key={idx}>
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
+              <div className="card" key={idx}>
+                <h3 className="card-title">{item.title}</h3>
+                <p className="card-desc">{item.description}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
-        <section id="systems" className="systems-section">
-          <h3>Flagship Systems</h3>
-          {flagshipSystems.map(system => (
-            <div className="case-study" key={system.id}>
-              <div className="case-header">
-                <div>
-                  <h4>{system.name}</h4>
-                  <div className="case-class">{system.classification}</div>
-                </div>
-                <div className="status-badge">{system.status}</div>
+        <h2 className="section-title">Flagship Systems</h2>
+        <div className="grid" id="projects">
+          {projects.map((project, idx) => (
+            <div className="card" key={idx}>
+              <h3 className="card-title">{project.title}</h3>
+              <p className="card-desc">{project.description}</p>
+              <div className="tags">
+                {project.tags.map((tag, tIdx) => (
+                  <span className="tag" key={tIdx}>{tag}</span>
+                ))}
               </div>
-              <div className="case-body">
-                <h5>Problem</h5>
-                <p>{system.problem}</p>
-                <h5>Architecture</h5>
-                <p>{system.architecture}</p>
-                <h5>Evidence</h5>
-                <p style={{fontFamily: 'monospace', color: 'var(--accent-cyan)'}}>{system.evidence}</p>
+              <div>
+                <a href={project.link} target="_blank" rel="noreferrer" className="card-link">
+                  View Details &rarr;
+                </a>
               </div>
             </div>
           ))}
-        </section>
+        </div>
+      </main>
 
-        <section id="domains" className="systems-section" style={{borderTop: '1px solid var(--border-light)'}}>
-          <h3>Engineering Domains</h3>
-          <div className="domains-grid">
-            <div className="domain-group">
-              <h4>Systems & Architecture</h4>
-              <ul>{technicalDomains.systems.map(i => <li key={i}>{i}</li>)}</ul>
-            </div>
-            <div className="domain-group">
-              <h4>AI & Computation</h4>
-              <ul>{technicalDomains.ai.map(i => <li key={i}>{i}</li>)}</ul>
-            </div>
-            <div className="domain-group">
-              <h4>Software</h4>
-              <ul>{technicalDomains.software.map(i => <li key={i}>{i}</li>)}</ul>
-            </div>
-            <div className="domain-group">
-              <h4>Networking</h4>
-              <ul>{technicalDomains.networking.map(i => <li key={i}>{i}</li>)}</ul>
-            </div>
-            <div className="domain-group">
-              <h4>Infrastructure</h4>
-              <ul>{technicalDomains.infrastructure.map(i => <li key={i}>{i}</li>)}</ul>
-            </div>
-            <div className="domain-group">
-              <h4>Embedded & IoT</h4>
-              <ul>{technicalDomains.embedded.map(i => <li key={i}>{i}</li>)}</ul>
-            </div>
-          </div>
-        </section>
-        
-        <footer style={{textAlign: 'center', padding: '3rem', borderTop: '1px solid var(--border-light)', color: 'var(--text-muted)'}}>
-          &copy; {new Date().getFullYear()} Alen Barnes. Computational Systems Builder.
-        </footer>
-      </div>
-    </>
+      <footer>
+        &copy; {new Date().getFullYear()} Alen Barnes. Computational Systems Builder.
+      </footer>
+    </div>
   );
 }
 
