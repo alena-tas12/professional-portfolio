@@ -57,13 +57,19 @@ function App() {
     <div className="app-container">
       <header className="hero-section">
         <div className="hero-content">
-          <img src={`https://ui-avatars.com/api/?name=${encodeURIComponent(profile.name)}&background=0D8ABC&color=fff&size=150`} alt={profile.name} style={{borderRadius: '50%', marginBottom: '2rem'}} />
-          <h1 className="title" style={{textTransform: 'uppercase', letterSpacing: '2px'}}>{profile.name}</h1>
-          <p className="subtitle" style={{color: '#06b6d4', fontWeight: 'bold', fontSize: '1.4rem'}}>{profile.title}</p>
-          <p style={{fontSize: '1.2rem', color: '#94a3b8', margin: '1rem 0 2rem 0'}}>
+          <div className="avatar-wrapper">
+            <img 
+              src={`https://ui-avatars.com/api/?name=${encodeURIComponent(profile.name)}&background=0D8ABC&color=fff&size=150&bold=true`} 
+              alt={profile.name} 
+              className="hero-avatar"
+            />
+          </div>
+          <h1 className="title">{profile.name}</h1>
+          <p className="subtitle">{profile.title}</p>
+          <p className="hero-taglines">
             {profile.taglines.join(' • ')}
           </p>
-          <p style={{fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto 3rem auto', lineHeight: '1.6'}}>
+          <p className="hero-description">
             {profile.description}
           </p>
           <div className="nav-links">
@@ -80,7 +86,7 @@ function App() {
         <div id="intellectual" style={{marginBottom: '6rem'}}>
           <h2 className="section-title">The Architecture of My Work</h2>
           <div style={{ background: 'rgba(255,255,255,0.02)', padding: '2rem', borderRadius: '8px', marginBottom: '3rem', borderLeft: '4px solid #06b6d4', fontFamily: 'monospace', color: '#e2e8f0', lineHeight: '1.8' }}>
-            <p>ALEN</p>
+            <p>VIAN ALEN BARNES</p>
             <p> │</p>
             <p> SYSTEMS THINKING</p>
             <p> │</p>

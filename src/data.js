@@ -1,6 +1,6 @@
 export const masterRecord = {
   profile: {
-    name: 'Alen Barnes',
+    name: 'Vian Alen Barnes',
     title: 'Computational Systems Builder',
     taglines: ['Architecture', 'AI Systems', 'Computational Modelling', 'Infrastructure'],
     description: 'I design and build computational systems that model, observe, reason about, and interact with complex environments. My work spans AI systems, computational simulation, human-system interaction, networking, cloud infrastructure, and embedded systems.',
