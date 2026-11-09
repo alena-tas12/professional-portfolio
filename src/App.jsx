@@ -154,7 +154,11 @@ function App() {
         <div id="record" style={{padding: '4rem 3rem', background: 'rgba(255,255,255,0.02)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)'}}>
           <h2 className="section-title" style={{marginBottom: '1rem'}}>Master Professional Record</h2>
           <p style={{textAlign: 'center', color: '#94a3b8', marginBottom: '3rem'}}>
-            <a href="#" style={{color: '#06b6d4', textDecoration: 'none', borderBottom: '1px dashed #06b6d4'}}>Download Formal PDF Resume</a>
+            {profile.resumePdf ? (
+              <a href={profile.resumePdf} target="_blank" rel="noreferrer" style={{color: '#06b6d4', textDecoration: 'none', borderBottom: '1px dashed #06b6d4'}}>Download Formal PDF Resume</a>
+            ) : (
+              <span aria-disabled="true" style={{color: '#64748b'}}>Resume PDF not yet published</span>
+            )}
           </p>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem', maxWidth: '800px', margin: '0 auto' }}>
@@ -194,9 +198,15 @@ function App() {
       <footer id="contact" style={{textAlign: 'center', padding: '4rem', color: '#94a3b8', borderTop: '1px solid rgba(255,255,255,0.05)', marginTop: '4rem'}}>
         <h3 style={{color: '#e2e8f0', marginBottom: '2rem'}}>Connect</h3>
         <div style={{display: 'flex', justifyContent: 'center', gap: '2rem', marginBottom: '2rem'}}>
-          <a href={`mailto:${profile.email}`} style={{color: '#06b6d4', textDecoration: 'none'}}>Email</a>
-          <a href={profile.linkedin} style={{color: '#06b6d4', textDecoration: 'none'}}>LinkedIn</a>
-          <a href={profile.github} style={{color: '#06b6d4', textDecoration: 'none'}}>GitHub</a>
+          {profile.email && (
+            <a href={`mailto:${profile.email}`} style={{color: '#06b6d4', textDecoration: 'none'}}>Email</a>
+          )}
+          {profile.linkedin && (
+            <a href={profile.linkedin} target="_blank" rel="noreferrer" style={{color: '#06b6d4', textDecoration: 'none'}}>LinkedIn</a>
+          )}
+          {profile.github && (
+            <a href={profile.github} target="_blank" rel="noreferrer" style={{color: '#06b6d4', textDecoration: 'none'}}>GitHub</a>
+          )}
         </div>
         <p>&copy; {new Date().getFullYear()} {profile.name}. {profile.title}.</p>
       </footer>
