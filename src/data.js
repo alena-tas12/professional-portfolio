@@ -4,9 +4,10 @@ export const masterRecord = {
     title: 'Computational Systems Builder',
     taglines: ['Architecture', 'AI Systems', 'Computational Modelling', 'Infrastructure'],
     description: 'I design and build computational systems that model, observe, reason about, and interact with complex environments. My work spans AI systems, computational simulation, human-system interaction, networking, cloud infrastructure, and embedded systems.',
-    email: 'alena@example.local',
+    email: '',
     github: 'https://github.com/alena-tas12',
-    linkedin: 'https://linkedin.com'
+    linkedin: '',
+    resumePdf: ''
   },
   intellectualIdentity: {
     title: "How I Think",
